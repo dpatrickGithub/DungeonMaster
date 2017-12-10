@@ -19,7 +19,7 @@
     "DungeonMaster": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/Tools/Roll/20",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

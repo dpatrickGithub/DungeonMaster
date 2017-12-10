@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DungeonMaster.Models\DungeonMaster.Models.csproj" />
+    <ProjectReference Include="..\DungeonMaster.Repositories\DungeonMaster.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>
