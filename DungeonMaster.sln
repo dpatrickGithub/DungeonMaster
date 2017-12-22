@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonMaster.WebApi", "DungeonMaster\DungeonMaster.WebApi.csproj", "{C046539C-3695-4732-8DF9-9836AC1B97B8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonMaster.Models", "DungeonMaster.Models\DungeonMaster.Models.csproj", "{4A6B2876-A159-45CF-95A2-3FF131E1D5D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonMaster.Services", "DungeonMaster.Services\DungeonMaster.Services.csproj", "{6858690E-2F04-43C5-BFEC-D6A377CC36D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonMaster.Services", "DungeonMaster.Services\DungeonMaster.Services.csproj", "{6858690E-2F04-43C5-BFEC-D6A377CC36D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonMaster.Repositories", "DungeonMaster.Repositories\DungeonMaster.Repositories.csproj", "{29E78C96-52BD-49FC-9379-84C34BE176E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonMaster.Repositories", "DungeonMaster.Repositories\DungeonMaster.Repositories.csproj", "{29E78C96-52BD-49FC-9379-84C34BE176E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonMaster.Data", "DungeonMaster.Data\DungeonMaster.Data.csproj", "{F8DF1B59-1D50-4600-84F3-A23D6B18FF3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{29E78C96-52BD-49FC-9379-84C34BE176E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29E78C96-52BD-49FC-9379-84C34BE176E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29E78C96-52BD-49FC-9379-84C34BE176E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8DF1B59-1D50-4600-84F3-A23D6B18FF3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8DF1B59-1D50-4600-84F3-A23D6B18FF3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8DF1B59-1D50-4600-84F3-A23D6B18FF3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8DF1B59-1D50-4600-84F3-A23D6B18FF3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

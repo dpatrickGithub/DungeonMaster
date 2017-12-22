@@ -1,18 +1,13 @@
-﻿using DungeonMaster.Models.DNDClass;
+﻿using DungeonMaster.Data.Models;
 using System;
 
 namespace DungeonMaster.Repositories
 {
     public class ClassRepository : IClassRepository
     {
-        public DNDClassTypeEnum GetClassTypeById(int classTypeId)
+        public ClassType GetClassTypeById(int classTypeId)
         {
-            if (!Enum.IsDefined(typeof(DNDClassTypeEnum), classTypeId))
-            {
-                throw new Exception(String.Format("Could not find a class corresponding to {0}", classTypeId));
-            }
-
-            return (DNDClassTypeEnum)classTypeId;
+            throw new NotImplementedException();
         }
     }
 }

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DungeonMaster.Data\DungeonMaster.Data.csproj" />
     <ProjectReference Include="..\DungeonMaster.Models\DungeonMaster.Models.csproj" />
     <ProjectReference Include="..\DungeonMaster.Repositories\DungeonMaster.Repositories.csproj" />
   </ItemGroup>

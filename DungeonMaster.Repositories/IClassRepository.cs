@@ -1,9 +1,9 @@
-﻿using DungeonMaster.Models.DNDClass;
+﻿using DungeonMaster.Data.Models;
 
 namespace DungeonMaster.Repositories
 {
     public interface IClassRepository
     {
-        DNDClassTypeEnum GetClassTypeById(int classTypeId);
+        ClassType GetClassTypeById(int classTypeId);
     }
 }
