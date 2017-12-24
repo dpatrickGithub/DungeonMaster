@@ -1,9 +1,11 @@
 ﻿using DungeonMaster.Data.Models;
+using System.Collections.Generic;
 
 namespace DungeonMaster.Repositories
 {
     public interface IClassRepository
     {
-        ClassType GetClassTypeById(int classTypeId);
+        Dndclass GetClassTypeById(int classTypeId);
+        IEnumerable<ClassType> GetAllClassTypes();
     }
 }
