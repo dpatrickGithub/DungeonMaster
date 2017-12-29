@@ -1,4 +1,4 @@
-﻿using DungeonMaster.Models.Character;
+﻿using DungeonMaster.Data.Models;
 
 namespace DungeonMaster.Services
 {

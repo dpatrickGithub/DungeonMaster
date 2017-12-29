@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DungeonMaster.Data.Models
 {
-    public partial class Race
+    public partial class Race : Model
     {
         public Race()
         {
@@ -11,7 +11,6 @@ namespace DungeonMaster.Data.Models
             InverseParentRace = new HashSet<Race>();
         }
 
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public short BaseSpeed { get; set; }

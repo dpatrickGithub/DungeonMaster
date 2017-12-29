@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace DungeonMaster.Data.Models
 {
-    public partial class Dndskill
+    public partial class Dndskill : Model
     {
-        public int Id { get; set; }
         public int SkillTypeId { get; set; }
         public int AbilityTypeId { get; set; }
 

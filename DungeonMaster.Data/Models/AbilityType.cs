@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DungeonMaster.Data.Models
 {
-    public partial class AbilityType
+    public partial class AbilityType : Model
     {
         public AbilityType()
         {
@@ -11,7 +11,6 @@ namespace DungeonMaster.Data.Models
             Proficiency = new HashSet<Proficiency>();
         }
 
-        public int Id { get; set; }
         public string Name { get; set; }
 
         public CharacterAbilityScore CharacterAbilityScore { get; set; }

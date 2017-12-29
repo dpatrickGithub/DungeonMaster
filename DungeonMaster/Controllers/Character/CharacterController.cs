@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using DungeonMaster.Services;
-using DungeonMaster.WebApi.ViewModels.Character;
-
-namespace DungeonMaster.WebApi.Controllers.Character
+﻿namespace DungeonMaster.WebApi.Controllers.Character
 {
+    using DungeonMaster.Services;
+    using DungeonMaster.WebApi.ViewModels.Character;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Collections.Generic;
+
     [Produces("application/json")]
     [Route("api/Characters")]
     public class CharacterController : Controller
     {
-        private readonly ICharacterService _charSvc;
+        private readonly ICharacterServiceNew _charSvc;
 
-        public CharacterController(ICharacterService charSvc)
+        public CharacterController(ICharacterServiceNew charSvc)
         {
             _charSvc = charSvc;
         }
@@ -31,7 +27,7 @@ namespace DungeonMaster.WebApi.Controllers.Character
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
-            return "value";
+            return _charSvc.GetById(id)?.CharacterName;
         }
         
         // POST: api/Characters

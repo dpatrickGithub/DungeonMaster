@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace DungeonMaster.Data.Models
 {
-    public partial class Background
+    public partial class Background : Model
     {
         public Background()
         {
             Character = new HashSet<Character>();
         }
 
-        public int Id { get; set; }
         public int BackgroundTypeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
