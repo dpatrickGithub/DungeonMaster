@@ -23,7 +23,7 @@
         {
             services.AddDbContext<DungeonMasterDevContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<ICharacterServiceNew, CharacterServiceNew>();
+            services.AddScoped<ICharacterService, CharacterService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICharacterRepository, CharacterRepository>();
 

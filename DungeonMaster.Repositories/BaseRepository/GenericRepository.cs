@@ -7,16 +7,6 @@
     using System.Linq;
     using System.Linq.Expressions;
 
-    public interface IGenericRepository<T> where T : BaseModel
-    {
-        IEnumerable<T> GetAll();
-        IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate);
-        T Add(T entity);
-        T Delete(T entity);
-        void Edit(T entity);
-        void Save();
-    }
-
     public abstract class GenericRepository<T> : IGenericRepository<T>
         where T : BaseModel
     {

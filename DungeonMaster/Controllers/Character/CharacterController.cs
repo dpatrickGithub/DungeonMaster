@@ -9,9 +9,9 @@
     [Route("api/Characters")]
     public class CharacterController : Controller
     {
-        private readonly ICharacterServiceNew _charSvc;
+        private readonly ICharacterService _charSvc;
 
-        public CharacterController(ICharacterServiceNew charSvc)
+        public CharacterController(ICharacterService charSvc)
         {
             _charSvc = charSvc;
         }

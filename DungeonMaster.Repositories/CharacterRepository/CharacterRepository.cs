@@ -5,11 +5,6 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public interface ICharacterRepository : IGenericRepository<Character>
-    {
-        Character GetById(int id);
-    }
-
     public class CharacterRepository : GenericRepository<Character>, ICharacterRepository
     {
         public CharacterRepository(DungeonMasterDevContext context) : base(context)

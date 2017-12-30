@@ -5,18 +5,6 @@
     using System;
     using System.Collections.Generic;
 
-    public interface IService
-    {
-    }
-
-    public interface IModelService<T> : IService where T : BaseModel
-    {
-        void Create(T entity);
-        void Delete(T entity);
-        IEnumerable<T> GetAll();
-        void Update(T entity);
-    }
-
     public abstract class ModelService<T> : IModelService<T> where T : BaseModel
     {
         IUnitOfWork _unitOfWork;

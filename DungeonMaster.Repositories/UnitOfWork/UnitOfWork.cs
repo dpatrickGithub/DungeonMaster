@@ -1,13 +1,7 @@
 ﻿namespace DungeonMaster.Repositories
 {
     using DungeonMaster.Data.Models;
-    using Microsoft.EntityFrameworkCore;
     using System;
-
-    public interface IUnitOfWork : IDisposable
-    {
-        int Commit();
-    }
 
     public class UnitOfWork : IUnitOfWork
     {
@@ -15,13 +9,11 @@
 
         public UnitOfWork(DungeonMasterDevContext context)
         {
-
             _dbContext = context;
         }
 
         public int Commit()
         {
-            // Save changes with the default options
             return _dbContext.SaveChanges();
         }
 
