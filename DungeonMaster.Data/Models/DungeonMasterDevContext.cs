@@ -96,7 +96,7 @@ namespace DungeonMaster.Data.Models
 
                 entity.Property(e => e.CharacterId).HasColumnName("Character_Id");
 
-                entity.HasOne(d => d.IdNavigation)
+                entity.HasOne(d => d.AbilityType)
                     .WithOne(p => p.CharacterAbilityScore)
                     .HasForeignKey<CharacterAbilityScore>(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)

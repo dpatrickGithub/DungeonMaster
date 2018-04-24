@@ -44,7 +44,7 @@
         public void DeleteCharacter(Character character) => _characterRepository.Delete(character);
         public void DeleteCharacter(int characterId)
         {
-            var character = GetById(characterId);
+            var character = _characterRepository.GetById(characterId);
             _characterRepository.Delete(character);
         }
     }
