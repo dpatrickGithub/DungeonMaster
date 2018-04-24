@@ -21,5 +21,8 @@ namespace DungeonMaster.Data.Models
 
         public Background Background { get; set; }
         public Race Race { get; set; }
+
+        public ICollection<Dndclass> Classes { get; set; }
+        public ICollection<CharacterAbilityScore> AbilityScores { get; set; }
     }
 }

@@ -9,6 +9,6 @@ namespace DungeonMaster.Data.Models
         public int CharacterId { get; set; }
         public int Score { get; set; }
 
-        public AbilityType IdNavigation { get; set; }
+        public AbilityType AbilityType { get; set; }
     }
 }

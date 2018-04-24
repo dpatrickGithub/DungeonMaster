@@ -4,6 +4,6 @@
 
     public interface ICharacterService : IModelService<Character>
     {
-        Character GetById(int id);
+        Models.Character.Character GetById(int id);
     }
 }
