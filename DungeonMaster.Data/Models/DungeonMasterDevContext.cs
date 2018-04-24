@@ -8,20 +8,13 @@ namespace DungeonMaster.Data.Models
     {
         public virtual DbSet<AbilityType> AbilityType { get; set; }
         public virtual DbSet<Background> Background { get; set; }
-        public virtual DbSet<BackgroundType> BackgroundType { get; set; }
         public virtual DbSet<Character> Character { get; set; }
         public virtual DbSet<CharacterAbilityScore> CharacterAbilityScore { get; set; }
-        public virtual DbSet<ClassType> ClassType { get; set; }
         public virtual DbSet<Dndclass> Dndclass { get; set; }
         public virtual DbSet<Dndskill> Dndskill { get; set; }
         public virtual DbSet<Feature> Feature { get; set; }
-        public virtual DbSet<FeatureType> FeatureType { get; set; }
         public virtual DbSet<Proficiency> Proficiency { get; set; }
         public virtual DbSet<Race> Race { get; set; }
-        public virtual DbSet<RaceType> RaceType { get; set; }
-        public virtual DbSet<SkillType> SkillType { get; set; }
-        public virtual DbSet<SubClassType> SubClassType { get; set; }
-        public virtual DbSet<SubRaceType> SubRaceType { get; set; }
 
         // Unable to generate entity type for table 'dbo.Character_Class'. Please see the warning messages.
         // Unable to generate entity type for table 'dbo.Race_Feature'. Please see the warning messages.
@@ -51,19 +44,7 @@ namespace DungeonMaster.Data.Models
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
-
-                entity.HasOne(d => d.BackgroundType)
-                    .WithMany(p => p.Background)
-                    .HasForeignKey(d => d.BackgroundTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Background_BackgroundType");
-            });
-
-            modelBuilder.Entity<BackgroundType>(entity =>
-            {
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                
             });
 
             modelBuilder.Entity<Character>(entity =>
@@ -122,13 +103,6 @@ namespace DungeonMaster.Data.Models
                     .HasConstraintName("FK_Character_AbilityScore_AbilityType");
             });
 
-            modelBuilder.Entity<ClassType>(entity =>
-            {
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
-            });
-
             modelBuilder.Entity<Dndclass>(entity =>
             {
                 entity.ToTable("DNDClass");
@@ -147,21 +121,11 @@ namespace DungeonMaster.Data.Models
 
                 entity.Property(e => e.SubClassTypeId).HasColumnName("SubClassType_Id");
 
-                entity.HasOne(d => d.ClassType)
-                    .WithMany(p => p.Dndclass)
-                    .HasForeignKey(d => d.ClassTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_DNDClass_ClassType");
-
                 entity.HasOne(d => d.ParentClass)
-                    .WithMany(p => p.InverseParentClass)
+                    .WithMany(p => p.ChildClass)
                     .HasForeignKey(d => d.ParentClassId)
                     .HasConstraintName("FK_Class_ParentClass");
 
-                entity.HasOne(d => d.SubClassType)
-                    .WithMany(p => p.Dndclass)
-                    .HasForeignKey(d => d.SubClassTypeId)
-                    .HasConstraintName("FK_DNDClass_SubClassType");
             });
 
             modelBuilder.Entity<Dndskill>(entity =>
@@ -177,12 +141,6 @@ namespace DungeonMaster.Data.Models
                     .HasForeignKey(d => d.AbilityTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_DNDSkill_AbilityType");
-
-                entity.HasOne(d => d.SkillType)
-                    .WithMany(p => p.Dndskill)
-                    .HasForeignKey(d => d.SkillTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_DNDSkill_SkillType");
             });
 
             modelBuilder.Entity<Feature>(entity =>
@@ -201,20 +159,7 @@ namespace DungeonMaster.Data.Models
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(50);
-
-                entity.HasOne(d => d.FeatureType)
-                    .WithMany(p => p.Feature)
-                    .HasForeignKey(d => d.FeatureTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Feature_FeatureType");
-            });
-
-            modelBuilder.Entity<FeatureType>(entity =>
-            {
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                
             });
 
             modelBuilder.Entity<Proficiency>(entity =>
@@ -228,12 +173,7 @@ namespace DungeonMaster.Data.Models
                     .HasForeignKey(d => d.SavingThrowTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Proficiency_SavingThrow");
-
-                entity.HasOne(d => d.SkillType)
-                    .WithMany(p => p.Proficiency)
-                    .HasForeignKey(d => d.SkillTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Proficiency_SkillType");
+                
             });
 
             modelBuilder.Entity<Race>(entity =>
@@ -254,45 +194,7 @@ namespace DungeonMaster.Data.Models
                     .WithMany(p => p.InverseParentRace)
                     .HasForeignKey(d => d.ParentRaceId)
                     .HasConstraintName("FK_Race_ParentRace");
-
-                entity.HasOne(d => d.RaceType)
-                    .WithMany(p => p.Race)
-                    .HasForeignKey(d => d.RaceTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Race_RaceType");
-
-                entity.HasOne(d => d.SubRaceType)
-                    .WithMany(p => p.Race)
-                    .HasForeignKey(d => d.SubRaceTypeId)
-                    .HasConstraintName("FK_Race_SubRaceType");
-            });
-
-            modelBuilder.Entity<RaceType>(entity =>
-            {
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<SkillType>(entity =>
-            {
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<SubClassType>(entity =>
-            {
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<SubRaceType>(entity =>
-            {
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                
             });
         }
     }

@@ -9,6 +9,5 @@ namespace DungeonMaster.Data.Models
         public int SavingThrowTypeId { get; set; }
 
         public AbilityType SavingThrowType { get; set; }
-        public SkillType SkillType { get; set; }
     }
 }

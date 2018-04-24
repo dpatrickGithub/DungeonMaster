@@ -19,8 +19,6 @@ namespace DungeonMaster.Data.Models
         public int? SubRaceTypeId { get; set; }
 
         public Race ParentRace { get; set; }
-        public RaceType RaceType { get; set; }
-        public SubRaceType SubRaceType { get; set; }
         public ICollection<Character> Character { get; set; }
         public ICollection<Race> InverseParentRace { get; set; }
     }

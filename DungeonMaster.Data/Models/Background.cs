@@ -14,7 +14,6 @@ namespace DungeonMaster.Data.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public BackgroundType BackgroundType { get; set; }
         public ICollection<Character> Character { get; set; }
     }
 }

@@ -51,23 +51,7 @@ namespace DungeonMaster.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BackgroundTypeId");
-
                     b.ToTable("Background");
-                });
-
-            modelBuilder.Entity("DungeonMaster.Data.Models.BackgroundType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BackgroundType");
                 });
 
             modelBuilder.Entity("DungeonMaster.Data.Models.Character", b =>
@@ -141,20 +125,6 @@ namespace DungeonMaster.Data.Migrations
                     b.ToTable("Character_AbilityScore");
                 });
 
-            modelBuilder.Entity("DungeonMaster.Data.Models.ClassType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ClassType");
-                });
-
             modelBuilder.Entity("DungeonMaster.Data.Models.Dndclass", b =>
                 {
                     b.Property<int>("Id")
@@ -179,11 +149,7 @@ namespace DungeonMaster.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClassTypeId");
-
                     b.HasIndex("ParentClassId");
-
-                    b.HasIndex("SubClassTypeId");
 
                     b.ToTable("DNDClass");
                 });
@@ -202,8 +168,6 @@ namespace DungeonMaster.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AbilityTypeId");
-
-                    b.HasIndex("SkillTypeId");
 
                     b.ToTable("DNDSkill");
                 });
@@ -229,27 +193,10 @@ namespace DungeonMaster.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FeatureTypeId");
-
                     b.HasIndex("Id")
                         .HasName("IX_Feature");
 
                     b.ToTable("Feature");
-                });
-
-            modelBuilder.Entity("DungeonMaster.Data.Models.FeatureType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FeatureType");
                 });
 
             modelBuilder.Entity("DungeonMaster.Data.Models.Proficiency", b =>
@@ -266,8 +213,6 @@ namespace DungeonMaster.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("SavingThrowTypeId");
-
-                    b.HasIndex("SkillTypeId");
 
                     b.ToTable("Proficiency");
                 });
@@ -299,75 +244,7 @@ namespace DungeonMaster.Data.Migrations
 
                     b.HasIndex("ParentRaceId");
 
-                    b.HasIndex("RaceTypeId");
-
-                    b.HasIndex("SubRaceTypeId");
-
                     b.ToTable("Race");
-                });
-
-            modelBuilder.Entity("DungeonMaster.Data.Models.RaceType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RaceType");
-                });
-
-            modelBuilder.Entity("DungeonMaster.Data.Models.SkillType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SkillType");
-                });
-
-            modelBuilder.Entity("DungeonMaster.Data.Models.SubClassType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SubClassType");
-                });
-
-            modelBuilder.Entity("DungeonMaster.Data.Models.SubRaceType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SubRaceType");
-                });
-
-            modelBuilder.Entity("DungeonMaster.Data.Models.Background", b =>
-                {
-                    b.HasOne("DungeonMaster.Data.Models.BackgroundType", "BackgroundType")
-                        .WithMany("Background")
-                        .HasForeignKey("BackgroundTypeId")
-                        .HasConstraintName("FK_Background_BackgroundType");
                 });
 
             modelBuilder.Entity("DungeonMaster.Data.Models.Character", b =>
@@ -393,20 +270,10 @@ namespace DungeonMaster.Data.Migrations
 
             modelBuilder.Entity("DungeonMaster.Data.Models.Dndclass", b =>
                 {
-                    b.HasOne("DungeonMaster.Data.Models.ClassType", "ClassType")
-                        .WithMany("Dndclass")
-                        .HasForeignKey("ClassTypeId")
-                        .HasConstraintName("FK_DNDClass_ClassType");
-
                     b.HasOne("DungeonMaster.Data.Models.Dndclass", "ParentClass")
-                        .WithMany("InverseParentClass")
+                        .WithMany("ChildClass")
                         .HasForeignKey("ParentClassId")
                         .HasConstraintName("FK_Class_ParentClass");
-
-                    b.HasOne("DungeonMaster.Data.Models.SubClassType", "SubClassType")
-                        .WithMany("Dndclass")
-                        .HasForeignKey("SubClassTypeId")
-                        .HasConstraintName("FK_DNDClass_SubClassType");
                 });
 
             modelBuilder.Entity("DungeonMaster.Data.Models.Dndskill", b =>
@@ -415,19 +282,6 @@ namespace DungeonMaster.Data.Migrations
                         .WithMany("Dndskill")
                         .HasForeignKey("AbilityTypeId")
                         .HasConstraintName("FK_DNDSkill_AbilityType");
-
-                    b.HasOne("DungeonMaster.Data.Models.SkillType", "SkillType")
-                        .WithMany("Dndskill")
-                        .HasForeignKey("SkillTypeId")
-                        .HasConstraintName("FK_DNDSkill_SkillType");
-                });
-
-            modelBuilder.Entity("DungeonMaster.Data.Models.Feature", b =>
-                {
-                    b.HasOne("DungeonMaster.Data.Models.FeatureType", "FeatureType")
-                        .WithMany("Feature")
-                        .HasForeignKey("FeatureTypeId")
-                        .HasConstraintName("FK_Feature_FeatureType");
                 });
 
             modelBuilder.Entity("DungeonMaster.Data.Models.Proficiency", b =>
@@ -436,11 +290,6 @@ namespace DungeonMaster.Data.Migrations
                         .WithMany("Proficiency")
                         .HasForeignKey("SavingThrowTypeId")
                         .HasConstraintName("FK_Proficiency_SavingThrow");
-
-                    b.HasOne("DungeonMaster.Data.Models.SkillType", "SkillType")
-                        .WithMany("Proficiency")
-                        .HasForeignKey("SkillTypeId")
-                        .HasConstraintName("FK_Proficiency_SkillType");
                 });
 
             modelBuilder.Entity("DungeonMaster.Data.Models.Race", b =>
@@ -449,16 +298,6 @@ namespace DungeonMaster.Data.Migrations
                         .WithMany("InverseParentRace")
                         .HasForeignKey("ParentRaceId")
                         .HasConstraintName("FK_Race_ParentRace");
-
-                    b.HasOne("DungeonMaster.Data.Models.RaceType", "RaceType")
-                        .WithMany("Race")
-                        .HasForeignKey("RaceTypeId")
-                        .HasConstraintName("FK_Race_RaceType");
-
-                    b.HasOne("DungeonMaster.Data.Models.SubRaceType", "SubRaceType")
-                        .WithMany("Race")
-                        .HasForeignKey("SubRaceTypeId")
-                        .HasConstraintName("FK_Race_SubRaceType");
                 });
 #pragma warning restore 612, 618
         }

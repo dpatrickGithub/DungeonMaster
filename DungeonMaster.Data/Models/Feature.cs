@@ -10,6 +10,5 @@ namespace DungeonMaster.Data.Models
         public string Description { get; set; }
         public int FeatureTypeId { get; set; }
 
-        public FeatureType FeatureType { get; set; }
     }
 }

@@ -19,11 +19,5 @@ namespace DungeonMaster.Repositories
             var results = _context.Dndclass.FirstOrDefault(ct => ct.Id == classTypeId);
             return results;
         }
-
-        public IEnumerable<ClassType> GetAllClassTypes()
-        {
-            var results = _context.ClassType;
-            return results;
-        }
     }
 }

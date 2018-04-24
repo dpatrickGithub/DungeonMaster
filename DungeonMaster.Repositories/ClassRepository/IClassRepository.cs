@@ -6,6 +6,5 @@ namespace DungeonMaster.Repositories
     public interface IClassRepository
     {
         Dndclass GetClassTypeById(int classTypeId);
-        IEnumerable<ClassType> GetAllClassTypes();
     }
 }
