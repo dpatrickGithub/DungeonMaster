@@ -11,9 +11,10 @@ using System;
 namespace DungeonMaster.Data.Migrations
 {
     [DbContext(typeof(DungeonMasterDevContext))]
-    partial class DungeonMasterDevContextModelSnapshot : ModelSnapshot
+    [Migration("20180424233458_AddCharacterAbilityScoreFK")]
+    partial class AddCharacterAbilityScoreFK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
