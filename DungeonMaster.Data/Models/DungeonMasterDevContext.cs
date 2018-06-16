@@ -109,7 +109,7 @@ namespace DungeonMaster.Data.Models
 
                 entity.Property(e => e.ClassTypeId).HasColumnName("ClassType_Id");
 
-                entity.Property(e => e.Desription)
+                entity.Property(e => e.Description)
                     .IsRequired()
                     .HasColumnType("ntext");
 
