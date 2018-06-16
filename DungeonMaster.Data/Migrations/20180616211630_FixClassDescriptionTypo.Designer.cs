@@ -4,14 +4,16 @@ using DungeonMaster.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DungeonMaster.Data.Migrations
 {
     [DbContext(typeof(DungeonMasterDevContext))]
-    partial class DungeonMasterDevContextModelSnapshot : ModelSnapshot
+    [Migration("20180616211630_FixClassDescriptionTypo")]
+    partial class FixClassDescriptionTypo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
