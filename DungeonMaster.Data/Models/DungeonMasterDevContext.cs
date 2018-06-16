@@ -196,14 +196,294 @@ namespace DungeonMaster.Data.Models
                     .HasConstraintName("FK_Race_ParentRace");
                 
             });
+
             modelBuilder.Entity<Race>().HasData(new Models.Race()
             {
                 BaseSpeed = 25,
                 Description = "little thicc bois",
                 Id = 1,
-                
+                Name = "Dwarf",
+                Size = "small"
+            });
 
-            })
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 25,
+                Description = "little thicc bois",
+                Id = 2,
+                Name = "Hill Dwarf",
+                Size = "small",
+                ParentRaceId = 1
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 25,
+                Description = "little thicc bois",
+                Id = 3,
+                Name = "Mountain Dwarf",
+                Size = "small",
+                ParentRaceId = 1
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "tall pointy bois",
+                Id = 4,
+                Name = "Elf",
+                Size = "medium"
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "tall bougie bois",
+                Id = 5,
+                Name = "High Elf",
+                Size = "medium",
+                ParentRaceId = 4
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 35,
+                Description = "tall nature bois",
+                Id = 6,
+                Name = "Wood Elf",
+                Size = "medium",
+                ParentRaceId = 4
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "tall emo bois",
+                Id = 7,
+                Name = "Dark Elf (Drow)",
+                Size = "medium",
+                ParentRaceId = 4
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 25,
+                Description = "little happy bois",
+                Id = 8,
+                Name = "Halfling",
+                Size = "small"
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 25,
+                Description = "little sneaky bois",
+                Id = 9,
+                Name = "Lightfoot Halfling",
+                Size = "small",
+                ParentRaceId = 8
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 25,
+                Description = "little hardy bois",
+                Id = 10,
+                Name = "Stout Halfling",
+                Size = "small",
+                ParentRaceId = 8
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "boring bois",
+                Id = 11,
+                Name = "Human",
+                Size = "medium"
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "special boring bois",
+                Id = 12,
+                Name = "Variant Human",
+                Size = "medium",
+                ParentRaceId = 11
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "dragon bois",
+                Id = 13,
+                Name = "Dragonborn",
+                Size = "medium"
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "black dragon bois",
+                Id = 14,
+                Name = "Black Dragonborn",
+                Size = "medium",
+                ParentRaceId = 13
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "blue dragon bois",
+                Id = 15,
+                Name = "Blue Dragonborn",
+                Size = "medium",
+                ParentRaceId = 13
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "brass dragon bois",
+                Id = 16,
+                Name = "Brass Dragonborn",
+                Size = "medium",
+                ParentRaceId = 13
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "bronze dragon bois",
+                Id = 17,
+                Name = "Bronze Dragonborn",
+                Size = "medium",
+                ParentRaceId = 13
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "copper dragon bois",
+                Id = 18,
+                Name = "Copper Dragonborn",
+                Size = "medium",
+                ParentRaceId = 13
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "gold dragon bois",
+                Id = 19,
+                Name = "Gold Dragonborn",
+                Size = "medium",
+                ParentRaceId = 13
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "green dragon bois",
+                Id = 20,
+                Name = "Green Dragonborn",
+                Size = "medium",
+                ParentRaceId = 13
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "red dragon bois",
+                Id = 21,
+                Name = "Red Dragonborn",
+                Size = "medium",
+                ParentRaceId = 13
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "silver dragon bois",
+                Id = 22,
+                Name = "Silver Dragonborn",
+                Size = "medium",
+                ParentRaceId = 13
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "white dragon bois",
+                Id = 23,
+                Name = "White Dragonborn",
+                Size = "medium",
+                ParentRaceId = 13
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "stupid lil bois",
+                Id = 24,
+                Name = "Gnome",
+                Size = "small"
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "stupid lil nature bois",
+                Id = 25,
+                Name = "Forest Gnome",
+                Size = "small",
+                ParentRaceId = 24
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "stupid lil hard bois",
+                Id = 26,
+                Name = "Rock Gnome",
+                Size = "small",
+                ParentRaceId = 24
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "half and half bois",
+                Id = 27,
+                Name = "Half-Elf",
+                Size = "medium"
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "little tusky bois",
+                Id = 28,
+                Name = "Half-Orc",
+                Size = "medium"
+            });
+
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 30,
+                Description = "devil bois",
+                Id = 29,
+                Name = "Tiefling",
+                Size = "medium"
+            });
+
+
+
+
+
+
+
         }
     }
 }

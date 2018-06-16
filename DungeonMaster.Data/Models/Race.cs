@@ -15,8 +15,9 @@ namespace DungeonMaster.Data.Models
         public string Description { get; set; }
         public short BaseSpeed { get; set; }
         public int? ParentRaceId { get; set; }
-        public int RaceTypeId { get; set; }
         public int? SubRaceTypeId { get; set; }
+        public string Size { get; set; }
+
 
         public Race ParentRace { get; set; }
         public ICollection<Character> Character { get; set; }
