@@ -191,11 +191,19 @@ namespace DungeonMaster.Data.Models
                 entity.Property(e => e.SubRaceTypeId).HasColumnName("SubRaceType_Id");
 
                 entity.HasOne(d => d.ParentRace)
-                    .WithMany(p => p.InverseParentRace)
+                    .WithMany(p => p.ChildRaces)
                     .HasForeignKey(d => d.ParentRaceId)
                     .HasConstraintName("FK_Race_ParentRace");
                 
             });
+            modelBuilder.Entity<Race>().HasData(new Models.Race()
+            {
+                BaseSpeed = 25,
+                Description = "little thicc bois",
+                Id = 1,
+                
+
+            })
         }
     }
 }
