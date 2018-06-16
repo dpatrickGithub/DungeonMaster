@@ -35,6 +35,42 @@ namespace DungeonMaster.Data.Models
                     .HasMaxLength(50);
             });
 
+            modelBuilder.Entity<AbilityType>().HasData(new Models.AbilityType()
+            {
+                Name = "Strength",
+                Id = 1
+            });
+
+            modelBuilder.Entity<AbilityType>().HasData(new Models.AbilityType()
+            {
+                Name = "Dexterity",
+                Id = 2
+            });
+
+            modelBuilder.Entity<AbilityType>().HasData(new Models.AbilityType()
+            {
+                Name = "Intelligence",
+                Id = 3
+            });
+
+            modelBuilder.Entity<AbilityType>().HasData(new Models.AbilityType()
+            {
+                Name = "Wisdom",
+                Id = 4
+            });
+
+            modelBuilder.Entity<AbilityType>().HasData(new Models.AbilityType()
+            {
+                Name = "Charisma",
+                Id = 5
+            });
+
+            modelBuilder.Entity<AbilityType>().HasData(new Models.AbilityType()
+            {
+                Name = "Constitution",
+                Id = 1
+            });
+
             modelBuilder.Entity<Background>(entity =>
             {
                 
@@ -620,6 +656,132 @@ namespace DungeonMaster.Data.Models
                     .HasForeignKey(d => d.AbilityTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_DNDSkill_AbilityType");
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Athletics",
+                SkillTypeId = 1,
+                AbilityTypeId = 1
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Acrobatic",
+                SkillTypeId = 2,
+                AbilityTypeId = 2
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Sleight of Hand",
+                SkillTypeId = 3,
+                AbilityTypeId = 2
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Stealth",
+                SkillTypeId = 4,
+                AbilityTypeId = 2
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Arcana",
+                SkillTypeId = 4,
+                AbilityTypeId = 3
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "History",
+                SkillTypeId = 5,
+                AbilityTypeId = 3
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Investigation",
+                SkillTypeId = 6,
+                AbilityTypeId = 3
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Nature",
+                SkillTypeId = 7,
+                AbilityTypeId = 3
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Religion",
+                SkillTypeId = 8,
+                AbilityTypeId = 3
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Animal Handling",
+                SkillTypeId = 9,
+                AbilityTypeId = 4
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Insight",
+                SkillTypeId = 10,
+                AbilityTypeId = 4
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Medicine",
+                SkillTypeId = 11,
+                AbilityTypeId = 4
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Perception",
+                SkillTypeId = 12,
+                AbilityTypeId = 4
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Survival",
+                SkillTypeId = 13,
+                AbilityTypeId = 4
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Deception",
+                SkillTypeId = 14,
+                AbilityTypeId = 5
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Intimidation",
+                SkillTypeId = 15,
+                AbilityTypeId = 5
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Performace",
+                SkillTypeId = 16,
+                AbilityTypeId = 5
+            });
+
+            modelBuilder.Entity<Dndskill>().HasData(new Models.Dndskill()
+            {
+                Name = "Persuasion",
+                SkillTypeId = 17,
+                AbilityTypeId = 5
             });
 
             modelBuilder.Entity<Feature>(entity =>
