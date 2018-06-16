@@ -10,7 +10,6 @@ namespace DungeonMaster.Data.Models
             Character = new HashSet<Character>();
         }
 
-        public int BackgroundTypeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
