@@ -37,14 +37,96 @@ namespace DungeonMaster.Data.Models
 
             modelBuilder.Entity<Background>(entity =>
             {
-                entity.Property(e => e.BackgroundTypeId).HasColumnName("BackgroundType_Id");
-
+                
                 entity.Property(e => e.Description).HasColumnType("ntext");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
                 
+            });
+
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Charlatan",
+                Description = "extrovert boi",
+                Id = 1
+            });
+
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Criminal",
+                Description = "outlaw boi",
+                Id = 2
+            });
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Entertainer",
+                Description = "performer boi",
+                Id = 3
+            });
+
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "folk Hero",
+                Description = "legendary boi",
+                Id = 4
+            });
+
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Guild Artisan",
+                Description = "professional boi",
+                Id = 5
+            });
+            
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Hermit",
+                Description = "introvert boi",
+                Id = 6
+            });
+
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Noble",
+                Description = "bougie boi",
+                Id = 7
+            });
+
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Outlander",
+                Description = "amish boi",
+                Id = 8
+            });
+
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Sage",
+                Description = "book boi",
+                Id = 9
+            });
+
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Sailor",
+                Description = "water boi",
+                Id = 10
+            });
+
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Soldier",
+                Description = "army boi",
+                Id = 11
+            });
+
+            modelBuilder.Entity<Background>().HasData(new Models.Background()
+            {
+                Name = "Urchin",
+                Description = "orphan boi",
+                Id = 12
             });
 
             modelBuilder.Entity<Character>(entity =>
@@ -185,9 +267,7 @@ namespace DungeonMaster.Data.Models
                     .HasMaxLength(50);
 
                 entity.Property(e => e.ParentRaceId).HasColumnName("ParentRace_Id");
-
-                entity.Property(e => e.RaceTypeId).HasColumnName("RaceType_Id");
-
+                
                 entity.Property(e => e.SubRaceTypeId).HasColumnName("SubRaceType_Id");
 
                 entity.HasOne(d => d.ParentRace)
