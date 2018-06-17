@@ -5,7 +5,6 @@ namespace DungeonMaster.Data.Models
 {
     public partial class Dndskill : Model
     {
-        public int SkillTypeId { get; set; }
         public int AbilityTypeId { get; set; }
         public string Name { get; set; }
         public AbilityType AbilityType { get; set; }
