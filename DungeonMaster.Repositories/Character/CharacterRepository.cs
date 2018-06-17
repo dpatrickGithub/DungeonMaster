@@ -11,13 +11,12 @@
         {
         }
 
-        public override IEnumerable<Character> GetAll() => _entities.Set<Character>().Include(c => c.Background).AsEnumerable();
+        public override IEnumerable<Character> GetAll() => _dbSet.Include(c => c.Background).AsEnumerable();
 
         public Character GetById(int id) => _dbSet
             .Include(c => c.Background)
             .Include(c => c.Race)
-            .Include(c => c.Race)
-            .Include(c => c.Race).ThenInclude(r => r.ParentRace)
+            .ThenInclude(r => r.ParentRace)
             .Where(c => c.Id == id).FirstOrDefault();
     }
 }
